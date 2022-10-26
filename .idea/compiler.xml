@@ -8,11 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="crud" />
         <module name="portfolio" />
+        <module name="backend" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="backend" options="-parameters" />
       <module name="crud" options="-parameters" />
       <module name="portfolio" options="-parameters" />
     </option>
