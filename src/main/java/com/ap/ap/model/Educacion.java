@@ -11,19 +11,18 @@ public class Educacion implements Serializable {
     private Long id;
     private String Titulo;
     private String Institucion;
-    private Long Año;
+    private Long Fecha;
     private String imgUrl;
     @Column(nullable = false, updatable = false)
     private String EducacionCode;
 
-    public Educacion() {
-    }
+    public Educacion() {}
 
-    public Educacion(Long id, String titulo, String institucion, Long año, String imgUrl, String educacionCode) {
+    public Educacion(Long id, String titulo, String institucion, Long fecha, String imgUrl, String educacionCode) {
         this.id = id;
         Titulo = titulo;
         Institucion = institucion;
-        Año = año;
+        Fecha = fecha;
         this.imgUrl = imgUrl;
         EducacionCode = educacionCode;
     }
@@ -52,12 +51,12 @@ public class Educacion implements Serializable {
         Institucion = institucion;
     }
 
-    public Long getAño() {
-        return Año;
+    public Long getFecha() {
+        return Fecha;
     }
 
-    public void setAño(Long año) {
-        Año = año;
+    public void setFecha(Long fecha) {
+        Fecha = fecha;
     }
 
     public String getImgUrl() {
@@ -82,10 +81,9 @@ public class Educacion implements Serializable {
                 "id=" + id +
                 ", Titulo='" + Titulo + '\'' +
                 ", Institucion='" + Institucion + '\'' +
-                ", Año=" + Año +
+                ", Fecha=" + Fecha +
                 ", imgUrl='" + imgUrl + '\'' +
                 ", EducacionCode='" + EducacionCode + '\'' +
                 '}';
     }
 }
-

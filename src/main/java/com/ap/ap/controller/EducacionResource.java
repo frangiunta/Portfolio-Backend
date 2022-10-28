@@ -21,7 +21,7 @@ public class EducacionResource {
     @GetMapping("/todos")
     public ResponseEntity<List<Educacion>> getAllEducacion() {
         List<Educacion> educacions = educacionService.findAllEducacions();
-        return new ResponseEntity<>(educacions, HttpStatus.OK);
+        return new ResponseEntity<>(educacions,HttpStatus.OK);
     }
 
     @PostMapping("/agregar")
