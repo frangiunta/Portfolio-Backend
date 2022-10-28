@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-public class Usuario implements Serializable {
+public class Perfil implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
@@ -13,23 +13,22 @@ public class Usuario implements Serializable {
     private String Titulo;
     private String ImgLink;
     private String Resumen;
-
     private String Bannerlink;
 @Column(nullable = false,updatable = false)
-    private String UsuarioCode;
+    private String PerfilCode;
 
-    public Usuario() {
+    public Perfil() {
 
     }
 
-    public Usuario(Long id, String bannerlink, String nombre, String titulo, String imgLink, String resumen, String usuarioCode) {
+    public Perfil(Long id, String nombre, String titulo, String imgLink, String resumen, String bannerlink, String perfilCode) {
         this.id = id;
-        Bannerlink=bannerlink;
         Nombre = nombre;
         Titulo = titulo;
         ImgLink = imgLink;
         Resumen = resumen;
-        UsuarioCode = usuarioCode;
+        Bannerlink = bannerlink;
+        PerfilCode = perfilCode;
     }
 
     public Long getId() {
@@ -38,14 +37,6 @@ public class Usuario implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getBannerlink() {
-        return Bannerlink;
-    }
-
-    public void setBannerlink(String bannerlink) {
-        Bannerlink = bannerlink;
     }
 
     public String getNombre() {
@@ -80,24 +71,32 @@ public class Usuario implements Serializable {
         Resumen = resumen;
     }
 
-    public String getUsuarioCode() {
-        return UsuarioCode;
+    public String getBannerlink() {
+        return Bannerlink;
     }
 
-    public void setUsuarioCode(String usuarioCode) {
-        UsuarioCode = usuarioCode;
+    public void setBannerlink(String bannerlink) {
+        Bannerlink = bannerlink;
+    }
+
+    public String getPerfilCode() {
+        return PerfilCode;
+    }
+
+    public void setPerfilCode(String perfilCode) {
+        PerfilCode = perfilCode;
     }
 
     @Override
     public String toString() {
-        return "Usuario{" +
+        return "Perfil{" +
                 "id=" + id +
                 ", Nombre='" + Nombre + '\'' +
-                "Bannerlink='" + Bannerlink + '\'' +
                 ", Titulo='" + Titulo + '\'' +
                 ", ImgLink='" + ImgLink + '\'' +
                 ", Resumen='" + Resumen + '\'' +
-                ", UsuarioCode='" + UsuarioCode + '\'' +
+                ", Bannerlink='" + Bannerlink + '\'' +
+                ", PerfilCode='" + PerfilCode + '\'' +
                 '}';
     }
 }

@@ -7,7 +7,7 @@ import com.ap.ap.security.entity.Rol;
 import com.ap.ap.security.enums.RolNombre;
 import com.ap.ap.security.service.RolService;
 import com.ap.ap.security.service.UserService;
-import com.ap.ap.security.dto.LoginUsuario;
+import com.ap.ap.security.dto.LoginUser;
 import com.ap.ap.security.entity.User;
 import com.ap.ap.security.jwt.JwtProvider;
 import jakarta.validation.Valid;
@@ -68,11 +68,11 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<JwtDto> login(@Valid @RequestBody LoginUsuario loginUsuario, BindingResult bindingResult){
+    public ResponseEntity<JwtDto> login(@Valid @RequestBody LoginUser loginUser, BindingResult bindingResult){
         if(bindingResult.hasErrors())
             return new ResponseEntity(new Mensaje("campos mal puestos"), HttpStatus.BAD_REQUEST);
         Authentication authentication =
-                authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginUsuario.getNombreUsuario(), loginUsuario.getPassword()));
+                authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginUser.getNombreUsuario(), loginUser.getPassword()));
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = jwtProvider.generateToken(authentication);
         UserDetails userDetails = (UserDetails)authentication.getPrincipal();

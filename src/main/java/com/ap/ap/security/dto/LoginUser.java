@@ -2,7 +2,7 @@ package com.ap.ap.security.dto;
 
 import jakarta.validation.constraints.NotBlank;
 
-public class LoginUsuario {
+public class LoginUser {
     @NotBlank
     private String nombreUsuario;
     @NotBlank
