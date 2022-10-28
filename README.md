@@ -1,4 +1,4 @@
-# tutorial_jwt_BACK
-jwt security api REST 
+# Portfolio Backend
 
-basic CRUD with JWT authentication based on roles
+Backend de mi portfolio personal, desarrollado en Springboot, seguridad implementada a través de JWT, y uso del repositorio JPA.
+
