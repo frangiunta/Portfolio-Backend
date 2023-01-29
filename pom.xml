@@ -10,7 +10,6 @@
 	</parent>
 	<groupId>com.ap.ap</groupId>
 	<artifactId>Portfolio</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>Portfolio-backend</name>
 	<description>Back</description>
 
