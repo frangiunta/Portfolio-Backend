@@ -1,6 +1,6 @@
 package com.ap.ap.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.io.Serializable;
 
 @Entity
