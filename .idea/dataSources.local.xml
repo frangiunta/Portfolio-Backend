@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="IU-253.32098.37">
+    <data-source name="test@gateway01.us-east-1.prod.aws.tidbcloud.com" uuid="f4bf3967-b45b-4335-b25c-80fb823978bf">
+      <database-info product="MySQL" version="8.0.11-TiDB-v7.5.6-serverless" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-j-9.5.0 (Revision: a7b3c94f50efbddb9f0dd69b3e0d1aaa25305cd6)" dbms="TIDB" exact-version="8.5.3" exact-driver-version="9.5">
+        <extra-name-characters>$</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+        <jdbc-catalog-is-schema>true</jdbc-catalog-is-schema>
+      </database-info>
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <user-name>44WkozoFm53u2Cp.root</user-name>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>
