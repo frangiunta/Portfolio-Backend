@@ -9,17 +9,19 @@ public class Skills implements Serializable {
     @Column(nullable = false, updatable = false)
     private Long id;
     private String Nombre;
-    private Long Porcentaje;
+    private String Descripcion;
 
     @Column(nullable = false, updatable = false)
     private String SkillCode;
 
-    public Skills (){};
+    public Skills (String descripcion){
+        Descripcion = descripcion;
+    };
 
-    public Skills(Long id, String nombre, Long porcentaje, String skillCode) {
+    public Skills(Long id, String nombre, String Descripcion, String descripcion, String skillCode) {
         this.id = id;
         Nombre = nombre;
-        Porcentaje = porcentaje;
+        this.Descripcion = descripcion;
         SkillCode = skillCode;
     }
 
@@ -39,12 +41,11 @@ public class Skills implements Serializable {
         Nombre = nombre;
     }
 
-    public Long getPorcentaje() {
-        return Porcentaje;
+    public String getDescripcion() {
+        return Descripcion;
     }
-
-    public void setPorcentaje(Long porcentaje) {
-        Porcentaje = porcentaje;
+    public void setDescripcion(String descripcion) {
+        Descripcion = descripcion;
     }
 
     public String getSkillCode() {
@@ -60,7 +61,7 @@ public class Skills implements Serializable {
         return "Skills{" +
                 "id=" + id +
                 ", Nombre='" + Nombre + '\'' +
-                ", Porcentaje=" + Porcentaje +
+                ", Descripcion='" + Descripcion + '\'' +
                 ", SkillCode='" + SkillCode + '\'' +
                 '}';
     }
