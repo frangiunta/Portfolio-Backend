@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="crud" />
-        <module name="Portfolio-Backend" />
         <module name="backend" />
         <module name="portfolio" />
         <module name="Portfolio" />

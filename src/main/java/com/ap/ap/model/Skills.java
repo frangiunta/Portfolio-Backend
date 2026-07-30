@@ -2,27 +2,31 @@ package com.ap.ap.model;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
+
 @Entity
 public class Skills implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, updatable = false)
     private Long id;
-    private String Nombre;
-    private String Descripcion;
+
+    @Column(nullable = false)
+    private String nombre;
+
+    @Column(nullable = false)
+    private String descripcion;
 
     @Column(nullable = false, updatable = false)
-    private String SkillCode;
+    private String skillCode;
 
-    public Skills (String descripcion){
-        Descripcion = descripcion;
-    };
+    // JPA requires a no-arg constructor
+    public Skills() {
+    }
 
-    public Skills(Long id, String nombre, String Descripcion, String descripcion, String skillCode) {
-        this.id = id;
-        Nombre = nombre;
-        this.Descripcion = descripcion;
-        SkillCode = skillCode;
+    public Skills(String nombre, String descripcion, String skillCode) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.skillCode = skillCode;
     }
 
     public Long getId() {
@@ -34,36 +38,36 @@ public class Skills implements Serializable {
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        this.nombre = nombre;
     }
 
     public String getDescripcion() {
-        return Descripcion;
+        return descripcion;
     }
+
     public void setDescripcion(String descripcion) {
-        Descripcion = descripcion;
+        this.descripcion = descripcion;
     }
 
     public String getSkillCode() {
-        return SkillCode;
+        return skillCode;
     }
 
     public void setSkillCode(String skillCode) {
-        SkillCode = skillCode;
+        this.skillCode = skillCode;
     }
 
     @Override
     public String toString() {
         return "Skills{" +
                 "id=" + id +
-                ", Nombre='" + Nombre + '\'' +
-                ", Descripcion='" + Descripcion + '\'' +
-                ", SkillCode='" + SkillCode + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", skillCode='" + skillCode + '\'' +
                 '}';
     }
 }
-

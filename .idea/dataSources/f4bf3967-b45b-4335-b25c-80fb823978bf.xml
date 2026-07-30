@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="test@gateway01.us-east-1.prod.aws.tidbcloud.com">
-  <database-model serializer="dbm" dbms="TIDB" family-id="TIDB" format-version="4.54">
+  <database-model serializer="dbm" dbms="TIDB" family-id="TIDB" format-version="4.55">
     <root id="1">
       <Dbms>TIDB</Dbms>
       <DefaultCasing>mixed/mixed</DefaultCasing>
