@@ -6,25 +6,30 @@ import java.io.Serializable;
 @Entity
 public class Educacion implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, updatable = false)
     private Long id;
-    private String Titulo;
-    private String Institucion;
-    private Long Fecha;
+
+    @Column(nullable = false)
+    private String titulo;
+
+    @Column(nullable = false)
+    private String institucion;
+
+    private Long fecha;
     private String imgUrl;
+
     @Column(nullable = false, updatable = false)
-    private String EducacionCode;
+    private String educacionCode;
 
     public Educacion() {}
 
-    public Educacion(Long id, String titulo, String institucion, Long fecha, String imgUrl, String educacionCode) {
-        this.id = id;
-        Titulo = titulo;
-        Institucion = institucion;
-        Fecha = fecha;
+    public Educacion(String titulo, String institucion, Long fecha, String imgUrl, String educacionCode) {
+        this.titulo = titulo;
+        this.institucion = institucion;
+        this.fecha = fecha;
         this.imgUrl = imgUrl;
-        EducacionCode = educacionCode;
+        this.educacionCode = educacionCode;
     }
 
     public Long getId() {
@@ -36,27 +41,27 @@ public class Educacion implements Serializable {
     }
 
     public String getTitulo() {
-        return Titulo;
+        return titulo;
     }
 
     public void setTitulo(String titulo) {
-        Titulo = titulo;
+        this.titulo = titulo;
     }
 
     public String getInstitucion() {
-        return Institucion;
+        return institucion;
     }
 
     public void setInstitucion(String institucion) {
-        Institucion = institucion;
+        this.institucion = institucion;
     }
 
     public Long getFecha() {
-        return Fecha;
+        return fecha;
     }
 
     public void setFecha(Long fecha) {
-        Fecha = fecha;
+        this.fecha = fecha;
     }
 
     public String getImgUrl() {
@@ -68,22 +73,22 @@ public class Educacion implements Serializable {
     }
 
     public String getEducacionCode() {
-        return EducacionCode;
+        return educacionCode;
     }
 
     public void setEducacionCode(String educacionCode) {
-        EducacionCode = educacionCode;
+        this.educacionCode = educacionCode;
     }
 
     @Override
     public String toString() {
         return "Educacion{" +
                 "id=" + id +
-                ", Titulo='" + Titulo + '\'' +
-                ", Institucion='" + Institucion + '\'' +
-                ", Fecha=" + Fecha +
+                ", titulo='" + titulo + '\'' +
+                ", institucion='" + institucion + '\'' +
+                ", fecha=" + fecha +
                 ", imgUrl='" + imgUrl + '\'' +
-                ", EducacionCode='" + EducacionCode + '\'' +
+                ", educacionCode='" + educacionCode + '\'' +
                 '}';
     }
 }
