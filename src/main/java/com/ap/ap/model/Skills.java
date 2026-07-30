@@ -13,7 +13,7 @@ public class Skills implements Serializable {
     @Column(nullable = false)
     private String nombre;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 1000)
     private String descripcion;
 
     @Column(nullable = false, updatable = false)
