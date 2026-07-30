@@ -13,7 +13,7 @@ public class Skills implements Serializable {
     @Column(nullable = false)
     private String nombre;
 
-    @Column(nullable = false, length = 1000)
+    @Column(nullable = false, length = 1000) // Asegura que la columna en la BD tenga 1000 caracteres
     private String descripcion;
 
     @Column(nullable = false, updatable = false)
