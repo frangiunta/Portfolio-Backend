@@ -5,29 +5,28 @@ import java.io.Serializable;
 @Entity
 public class Perfil implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, updatable = false)
     private Long id;
-    private String Nombre;
-    private String Titulo;
-    private String ImgLink;
-    private String Resumen;
-    private String Bannerlink;
-@Column(nullable = false,updatable = false)
-    private String PerfilCode;
+    private String nombre;
+    private String titulo;
+    private String imgLink;
+    private String resumen;
+    private String bannerlink;
+    @Column(nullable = false,updatable = false)
+    private String perfilCode;
 
     public Perfil() {
 
     }
 
-    public Perfil(Long id, String nombre, String titulo, String imgLink, String resumen, String bannerlink, String perfilCode) {
-        this.id = id;
-        Nombre = nombre;
-        Titulo = titulo;
-        ImgLink = imgLink;
-        Resumen = resumen;
-        Bannerlink = bannerlink;
-        PerfilCode = perfilCode;
+    public Perfil(String nombre, String titulo, String imgLink, String resumen, String bannerlink, String perfilCode) {
+        this.nombre = nombre;
+        this.titulo = titulo;
+        this.imgLink = imgLink;
+        this.resumen = resumen;
+        this.bannerlink = bannerlink;
+        this.perfilCode = perfilCode;
     }
 
     public Long getId() {
@@ -39,64 +38,63 @@ public class Perfil implements Serializable {
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        this.nombre = nombre;
     }
 
     public String getTitulo() {
-        return Titulo;
+        return titulo;
     }
 
     public void setTitulo(String titulo) {
-        Titulo = titulo;
+        this.titulo = titulo;
     }
 
     public String getImgLink() {
-        return ImgLink;
+        return imgLink;
     }
 
     public void setImgLink(String imgLink) {
-        ImgLink = imgLink;
+        this.imgLink = imgLink;
     }
 
     public String getResumen() {
-        return Resumen;
+        return resumen;
     }
 
     public void setResumen(String resumen) {
-        Resumen = resumen;
+        this.resumen = resumen;
     }
 
     public String getBannerlink() {
-        return Bannerlink;
+        return bannerlink;
     }
 
     public void setBannerlink(String bannerlink) {
-        Bannerlink = bannerlink;
+        this.bannerlink = bannerlink;
     }
 
     public String getPerfilCode() {
-        return PerfilCode;
+        return perfilCode;
     }
 
     public void setPerfilCode(String perfilCode) {
-        PerfilCode = perfilCode;
+        this.perfilCode = perfilCode;
     }
 
     @Override
     public String toString() {
         return "Perfil{" +
                 "id=" + id +
-                ", Nombre='" + Nombre + '\'' +
-                ", Titulo='" + Titulo + '\'' +
-                ", ImgLink='" + ImgLink + '\'' +
-                ", Resumen='" + Resumen + '\'' +
-                ", Bannerlink='" + Bannerlink + '\'' +
-                ", PerfilCode='" + PerfilCode + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", titulo='" + titulo + '\'' +
+                ", imgLink='" + imgLink + '\'' +
+                ", resumen='" + resumen + '\'' +
+                ", bannerlink='" + bannerlink + '\'' +
+                ", perfilCode='" + perfilCode + '\'' +
                 '}';
     }
 }
-
