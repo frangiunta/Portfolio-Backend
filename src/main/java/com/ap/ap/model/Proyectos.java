@@ -16,7 +16,7 @@ public class Proyectos implements Serializable {
 
     @Column(columnDefinition = "TEXT") // Recomendado si la descripción es larga
     private String descripcion;
-
+    @Column(columnDefinition = "TEXT")
     private String resumen;
 
     @Column(name = "img_link")
