@@ -4,7 +4,9 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@Table(name = "educacion")
 public class Educacion implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, updatable = false)
@@ -17,14 +19,28 @@ public class Educacion implements Serializable {
     private String institucion;
 
     private Long fecha;
+
+    @Column(name = "img_url")
     private String imgUrl;
 
-    @Column(nullable = false, updatable = false)
+    @Column(name = "educacion_code", nullable = false, updatable = false)
     private String educacionCode;
 
+    // Constructor vacío (requerido por JPA)
     public Educacion() {}
 
+    // Constructor sin ID (para crear nuevos registros)
     public Educacion(String titulo, String institucion, Long fecha, String imgUrl, String educacionCode) {
+        this.titulo = titulo;
+        this.institucion = institucion;
+        this.fecha = fecha;
+        this.imgUrl = imgUrl;
+        this.educacionCode = educacionCode;
+    }
+
+    // Constructor completo con ID (para pruebas o mapeos específicos)
+    public Educacion(Long id, String titulo, String institucion, Long fecha, String imgUrl, String educacionCode) {
+        this.id = id;
         this.titulo = titulo;
         this.institucion = institucion;
         this.fecha = fecha;

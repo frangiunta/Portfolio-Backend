@@ -2,33 +2,38 @@ package com.ap.ap.model;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
+
 @Entity
 public class Experiencia implements Serializable {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // ✅ Soluciona el error de la secuencia en MySQL
     @Column(nullable = false, updatable = false)
     private Long id;
-    private String Nombre;
-    private String Empresa;
-    private String Resumen;
-    private Long Fecha;
-    private String Descripcion;
-    private String ImgUrl;
+
+    // Convención de Java: Los atributos deben empezar con minúscula (camelCase)
+    private String nombre;
+    private String empresa;
+    private String resumen;
+    private Long fecha;
+    private String descripcion;
+    private String imgUrl;
+
     @Column(nullable = false, updatable = false)
-    private String ExperienciaCode;
+    private String experienciaCode;
 
     public Experiencia() {
     }
 
     public Experiencia(Long id, String nombre, String empresa, String resumen, Long fecha, String descripcion, String imgUrl, String experienciaCode) {
         this.id = id;
-        Nombre = nombre;
-        Empresa = empresa;
-        Resumen = resumen;
-        Fecha = fecha;
-        Descripcion = descripcion;
-        ImgUrl = imgUrl;
-        ExperienciaCode = experienciaCode;
+        this.nombre = nombre;
+        this.empresa = empresa;
+        this.resumen = resumen;
+        this.fecha = fecha;
+        this.descripcion = descripcion;
+        this.imgUrl = imgUrl;
+        this.experienciaCode = experienciaCode;
     }
 
     public Long getId() {
@@ -40,74 +45,72 @@ public class Experiencia implements Serializable {
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        this.nombre = nombre;
     }
 
     public String getEmpresa() {
-        return Empresa;
+        return empresa;
     }
 
     public void setEmpresa(String empresa) {
-        Empresa = empresa;
+        this.empresa = empresa;
     }
 
     public String getResumen() {
-        return Resumen;
+        return resumen;
     }
 
     public void setResumen(String resumen) {
-        Resumen = resumen;
+        this.resumen = resumen;
     }
 
     public Long getFecha() {
-        return Fecha;
+        return fecha;
     }
 
     public void setFecha(Long fecha) {
-        Fecha = fecha;
+        this.fecha = fecha;
     }
 
     public String getDescripcion() {
-        return Descripcion;
+        return descripcion;
     }
 
     public void setDescripcion(String descripcion) {
-        Descripcion = descripcion;
+        this.descripcion = descripcion;
     }
 
     public String getImgUrl() {
-        return ImgUrl;
+        return imgUrl;
     }
 
     public void setImgUrl(String imgUrl) {
-        ImgUrl = imgUrl;
+        this.imgUrl = imgUrl;
     }
 
     public String getExperienciaCode() {
-        return ExperienciaCode;
+        return experienciaCode;
     }
 
     public void setExperienciaCode(String experienciaCode) {
-        ExperienciaCode = experienciaCode;
+        this.experienciaCode = experienciaCode;
     }
 
     @Override
     public String toString() {
         return "Experiencia{" +
                 "id=" + id +
-                ", Nombre='" + Nombre + '\'' +
-                ", Empresa='" + Empresa + '\'' +
-                ", Resumen='" + Resumen + '\'' +
-                ", Fecha=" + Fecha +
-                ", Descripcion='" + Descripcion + '\'' +
-                ", ImgUrl='" + ImgUrl + '\'' +
-                ", ExperienciaCode='" + ExperienciaCode + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", empresa='" + empresa + '\'' +
+                ", resumen='" + resumen + '\'' +
+                ", fecha=" + fecha +
+                ", descripcion='" + descripcion + '\'' +
+                ", imgUrl='" + imgUrl + '\'' +
+                ", experienciaCode='" + experienciaCode + '\'' +
                 '}';
     }
 }
-
-
